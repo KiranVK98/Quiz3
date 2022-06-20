@@ -1,0 +1,83 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 style="text-align: center">QUIZ 1</h1>
+    <table class="table table-sm table-dark" style="height: 100px">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">STUDENT ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kiran Venkatesh</td>
+          <td>Kulkarni</td>
+          <td>1001848434</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="inputContainer">
+        <h2>TASK 1 --> Azure Database</h2>
+        <form action="{{url_for('createtable')}}" enctype=multipart/form-data method="POST">
+            <h5>Create the table (and indexes)</h5>
+            <a href=" /createtable"><input class="btn btn-primary" type="submit" id="button" value="Create Table"></a>
+            <p>Execution Time : </p>
+            <p>{{createtimeelapsed}}</p>
+        </form><br><br>
+        <hr>
+    </div>
+    <h2>TASK 2 --> Redis</h2>
+        <form action="{{url_for( 'randomqueriesredis')}}" enctype=multipart/form-data method="POST">
+            <h5>Perform random query execution given number to fetch the execution time using redis</h5>
+            <label for="randomqueriesredis">Enter the number of times you want a query to execute</label>
+            <input type="text" id="randomqueriesredis" name="randomqueriesredis">
+            <a href="/randomqueriesredis "><input class="btn btn-primary" type="submit" id="button" value="Submit"></a>
+            <p>Execution Time : </p>
+            <p>{{redisrandomelapsed}}</p>
+        </form><br><br>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+              <form action="/lat" , method="POST" , method="GET">
+                <div class="mb-3">
+                  <label for="lat" class="form-label">Enter the longitude</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lat"
+                    name="lat"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="long" class="form-label">Enter the N</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="long"
+                    name="long"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+</body>
+</html>
