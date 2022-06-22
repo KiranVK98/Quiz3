@@ -60,6 +60,13 @@ def randomqueries():
     return render_template("index.html", randomqueriestimeelapsed=time_elapsed)
 
 
+@app.route('/exec', methods=['GET', 'POST'])
+def exec():
+    number1 = request.form.get('mag1')
+    number2 = request.form.get('mag2')
+    sqlquery = "select Time, Latitude, Longitude, Depth, Mag, Magtype, Place, LocationSource from [dbo].[eq] where Mag > 3 and Mag < 7"
+
+
 @app.route('/randomqueriesredis', methods=['GET', 'POST'])
 def randomqueriesredis():
     if request.method == 'POST':
